@@ -16,12 +16,20 @@ module.exports = async function (context, req) {
     const parts = multipart.Parse(body, boundary);
  
     // let convertedResult = Buffer.from(parts[0].data).toString('base64');
-    // FILL IN THE BLANK
+    const result = await analyzeImage(parts[0].data);
+    context.res = {
+        body: {
+            result
+        }
+    };
+    console.log(result)
+    context.done(); 
  
     // context.res = {
     //     // status: 200, /* Defaults to 200 */
     //     body: convertedResult
     // };
+}
 
     // 'async function' means that this function will be running in the background
     async function analyzeImage(img){
@@ -46,6 +54,6 @@ module.exports = async function (context, req) {
         
         return data;
     }
-}
+    
 
 
