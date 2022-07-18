@@ -23,12 +23,7 @@ module.exports = async function (context, req) {
         }
     };
     console.log(result)
-    context.done(); 
- 
-    // context.res = {
-    //     // status: 200, /* Defaults to 200 */
-    //     body: convertedResult
-    // };
+    context.done();
 }
 
     // 'async function' means that this function will be running in the background
@@ -54,6 +49,6 @@ module.exports = async function (context, req) {
         
         return data;
     }
-    
+
 
 
