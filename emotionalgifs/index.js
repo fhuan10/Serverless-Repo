@@ -34,7 +34,7 @@ module.exports = async function (context, req) {
         // This is creating URL search (after the website.com/______ <---)
         let params = new URLSearchParams({
             'returnFaceId': 'true',
-            '<PARAMETER NAME>': 'emotion'
+            'returnFaceAttributes': 'emotion'
         })
 
         let resp = await fetch(uriBase + '?' + params.toString(), {
